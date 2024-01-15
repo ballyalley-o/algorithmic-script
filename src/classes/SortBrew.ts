@@ -1,10 +1,30 @@
-import { ISortBrew } from '@src/interfaces'
-
+/**
+ * Abstract class representing a sorting algorithm.
+ */
 export abstract class SortBrew {
+  /**
+   * The length of the array to be sorted.
+   */
   abstract length: number
+
+  /**
+   * Compares two elements in the array.
+   * @param leftIndex - The index of the left element.
+   * @param rightIndex - The index of the right element.
+   * @returns True if the left element is smaller than the right element, false otherwise.
+   */
   abstract compare(leftIndex: number, rightIndex: number): boolean
+
+  /**
+   * Swaps two elements in the array.
+   * @param leftIndex - The index of the left element.
+   * @param rightIndex - The index of the right element.
+   */
   abstract swap(leftIndex: number, rightIndex: number): void
 
+  /**
+   * Sorts the array using the implemented sorting algorithm.
+   */
   sort(): void {
     const { length } = this
 
@@ -17,6 +37,9 @@ export abstract class SortBrew {
     }
   }
 
+  /**
+   * Prints the current state of the array.
+   */
   print(): void {
     console.log(this)
   }

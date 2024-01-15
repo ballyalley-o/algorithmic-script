@@ -7,9 +7,15 @@ class Node {
   constructor(public data: number) {}
 }
 
+/**
+ * Represents a linked collection.
+ */
 export class LinkedCollection extends SortBrew {
   head: Node | null = null
 
+  /**
+   * Gets the length of the linked collection.
+   */
   get length(): number {
     if (!this.head) {
       return 0
@@ -26,6 +32,10 @@ export class LinkedCollection extends SortBrew {
     return length
   }
 
+  /**
+   * Adds a new node with the specified data to the linked collection.
+   * @param data - The data to be added.
+   */
   add(data: number): void {
     const node = new Node(data)
 
@@ -42,6 +52,12 @@ export class LinkedCollection extends SortBrew {
     tail.next = node
   }
 
+  /**
+   * Retrieves the node at the specified index in the linked collection.
+   * @param index - The index of the node to retrieve.
+   * @returns The node at the specified index.
+   * @throws Error if the index is invalid.
+   */
   at(index: number): Node {
     if (!this.head) {
       throw new Error(RESPONSE.GENERAL.INVALID_INDEX.message)
@@ -63,6 +79,13 @@ export class LinkedCollection extends SortBrew {
     throw new Error(RESPONSE.GENERAL.INVALID_INDEX.message)
   }
 
+  /**
+   * Compares the nodes at the specified indices in the linked collection.
+   * @param leftIndex - The index of the left node.
+   * @param rightIndex - The index of the right node.
+   * @returns True if the left node's data is greater than the right node's data, false otherwise.
+   * @throws Error if the linked collection is empty.
+   */
   compare(leftIndex: number, rightIndex: number): boolean {
     if (!this.head) {
       throw new Error(RESPONSE.GENERAL.EMPTY_LIST.message)
@@ -71,6 +94,11 @@ export class LinkedCollection extends SortBrew {
     return this.at(leftIndex).data > this.at(rightIndex).data
   }
 
+  /**
+   * Swaps the nodes at the specified indices in the linked collection.
+   * @param leftIndex - The index of the left node.
+   * @param rightIndex - The index of the right node.
+   */
   swap(leftIndex: number, rightIndex: number): void {
     const leftNode = this.at(leftIndex)
     const rightNode = this.at(rightIndex)
@@ -80,6 +108,9 @@ export class LinkedCollection extends SortBrew {
     rightNode.data = leftHand
   }
 
+  /**
+   * Prints the data of all nodes in the linked collection.
+   */
   print(): void {
     if (!this.head) {
       return
