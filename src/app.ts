@@ -1,7 +1,8 @@
-import { SortBrew } from './classes'
-import { numbers } from './mock'
+import { SortBrew, NumbersArray } from './classes'
+import { numbers, charArray } from './mock'
 
-const sortBrew = new SortBrew([10, 3, -5, 0, 100, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+const numbersArray = new NumbersArray(numbers)
+const sortBrew = new SortBrew(numbersArray)
 
 sortBrew.sort()
 sortBrew.print()
