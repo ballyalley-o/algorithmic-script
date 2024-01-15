@@ -1,5 +1,5 @@
 export class CharactersArray {
-  constructor(public data: string) {}
+  constructor(public data: string[] | string) {}
 
   get length(): number {
     return this.data.length
@@ -12,7 +12,15 @@ export class CharactersArray {
   }
 
   swap(leftIndex: number, rightIndex: number): void {
-    const characters = this.data?.split('')
+    if (this.data instanceof Array) {
+      const characters = this.data
+      const leftHand = characters[leftIndex]
+      characters[leftIndex] = characters[rightIndex]
+      characters[rightIndex] = leftHand
+      return
+    }
+
+    const characters = this.data.split('')
 
     const leftHand = characters[leftIndex]
 
