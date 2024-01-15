@@ -1,5 +1,9 @@
-export class CharactersArray {
-  constructor(public data: string[] | string) {}
+import { SortBrew } from './SortBrew'
+
+export class CharactersArray extends SortBrew {
+  constructor(public data: string[] | string) {
+    super()
+  }
 
   get length(): number {
     return this.data.length
