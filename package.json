@@ -1,0 +1,31 @@
+{
+  "name": "algorithmic-script",
+  "version": "1.0.0",
+  "description": "collection of sorting algorithms and logic",
+  "main": "app.ts",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon dist/app.js",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
+    "build:watch": "concurrently --kill-others \"tsc -w\" \"tsc-alias -w\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ballyalley-o/algorithmic-script.git"
+  },
+  "author": "Bally Lomibao <bgoodies.dev@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ballyalley-o/algorithmic-script/issues"
+  },
+  "homepage": "https://github.com/ballyalley-o/algorithmic-script#readme",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.8"
+  }
+}
