@@ -1,5 +1,9 @@
-export class NumbersArray {
-  constructor(public data: number[]) {}
+import { SortBrew } from './SortBrew'
+
+export class NumbersArray extends SortBrew {
+  constructor(public data: number[]) {
+    super()
+  }
 
   get length(): number {
     return this.data.length
@@ -14,4 +18,6 @@ export class NumbersArray {
     this.data[leftIndex] = this.data[rightIndex]
     this.data[rightIndex] = leftHand
   }
+
+  sort(): void {}
 }
